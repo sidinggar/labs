@@ -1,0 +1,293 @@
+/*Navigation Bar*/
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.navbar {
+    background-color: #000000;
+}
+
+.navbar .brand-navbar img:hover {
+    opacity: 0.7;
+}
+
+.navbar ul {
+    padding: 0px 30px 0px 0px;
+}
+
+.navbar ul li a {
+    color: white;
+    margin: 10px 0px 0px 10px;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+.navbar ul li a .fas {
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+.navbar ul li a:hover {
+    color: #15b000;
+}
+
+.navbar ul li.active > a {
+    color: #15b000;
+    font-weight: bold;
+    font-size: 12px;
+    border-left: 3px solid #15b000;
+    border-radius: 40px;
+}
+
+.iconStyle {
+    color: #15b000;
+}
+
+.navbar-toggler {
+    color: #000000;
+    background-color: #15b000;
+}
+
+.nav-link {
+    outline: none !important;
+}
+
+/*end Navigation Bar*/
+.photo-movie, .photo-currency, .photo-weather {
+    background-image: url("5-filmy-marvel.jpg");
+    position: relative;
+    background-attachment: fixed;
+    padding-bottom: 3%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.photo-movie::before, .photo-currency::before, .photo-weather::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #111;
+    opacity: 0.9;
+}
+
+
+.photo-currency {
+    background-image: url("maney.png");
+}
+
+.photo-weather {
+    background-image: url("weather.jpg");
+}
+
+.box-movie {
+    display: flex;
+    text-align: center;
+    position: relative;
+
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.link-movie {
+    display: inline-block;
+    color: #fdfdfe;
+    margin-bottom: 1%;
+    max-width: 250px;
+}
+
+.link-movie:hover {
+    color: #800000;
+    transition: all .5s ease
+}
+
+.movie {
+    outline: none;
+}
+
+.movie:hover {
+    text-decoration: none;
+}
+
+.img-movie {
+    padding-top: 15%;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+h1 {
+    color: #800000;
+    position: relative;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    margin: 0;
+    padding-top: 3%;
+    padding-bottom: 3%;
+
+}
+
+span {
+    margin: 0 20px;
+}
+
+h1::before, h1::after {
+    content: '';
+    position: relative;
+    width: 100%;
+    height: 1px;
+    background-color: #800000;
+    display: inline-block;
+}
+
+/*Currency*/
+.currency-box {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    color: white;
+}
+
+.currency-box-left {
+    width: 100%;
+}
+
+.currency-box-right {
+    width: 100%;
+    text-align: right;
+}
+
+.but-cur {
+    position: relative;
+    text-align: center;
+    display: block;
+    margin: 3%;
+}
+
+.short {
+    position: relative;
+    color: #fdfdfe;
+}
+
+/*Weather*/
+.weather-box {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.string {
+    display: flex;
+}
+
+.weather-line {
+    position: relative;
+    color: #000000;
+    font-size: 18px;
+    margin-bottom: 5px;
+    background-color: #ffffff;
+    padding: 15px;
+
+}
+
+.weather-box-left {
+    margin-right: 0;
+    margin-left: 20%;
+    width: 80%;
+    text-align: center;
+}
+
+.weather-box-right {
+    margin-right: 20%;
+    margin-left: 0;
+    width: 80%;
+    text-align: center;
+}
+
+.weather-box-left .weather-line {
+    border-radius: 30px 0 0 30px;
+}
+
+.weather-box-right .weather-line {
+    border-radius: 0 30px 30px 0;
+}
+
+.h2 {
+    color: #fdfdfe;
+    text-align: center;
+    padding-bottom: 15px;
+    position: relative;
+}
+
+.b-temp, .p-temp {
+    color: #fdfdfe !important;
+}
+
+.show {
+    position: relative;
+    color: #fdfdfe;
+    text-align: center;
+}
+
+.weather-input {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    margin: 10px;
+}
+
+.weather-btn {
+    margin-left: 10px;
+}
+
+/*footer*/
+.footer-bottom {
+    padding: 40px 0 30px;
+    border-top: 1px solid #666;
+    background: #1e1e1e;
+}
+
+.copyright-text p {
+    color: #ccc;
+    margin-top: 9px;
+    margin-bottom: 0;
+}
+
+.social-link li {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.social-link li a {
+    color: #ccc;
+    border: 1px solid #ccc;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    display: inline-block;
+    font-size: 14px;
+    transition: .5s;
+}
+
+/*end footer*/
+
+.jq {
+    width: 90%;
+    border-radius: 30px;
+    background-color: white;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    color: #1e1e1e;
+    opacity: 90%;
+    padding: 20px;
+}

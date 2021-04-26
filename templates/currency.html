@@ -1,0 +1,105 @@
+{% extends 'index.html' %}
+{% set active_page = "currency" %}
+
+{% block content %}
+
+    <div class="photo-currency">
+        <div>
+            <h1><span>Курсы валют</span></h1>
+            <div class="container">
+
+                <div class="currency-box">
+                    <div class="currency-box-left">
+                        {% for name in NameCur %}
+                            <div class="line">{{ name }}</div>
+                        {% endfor %}
+                    </div>
+                    <div class="currency-box-right">
+                        {% for cur in Cur %}
+                            <div class="line">{{ cur }}</div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="row form-group form-inline but-cur" id="roDiv">
+                    <input type="text" name="city" id="cur" class="form-control" placeholder="формат: 2019-5-15">
+                    <button id="submit" class="btn btn-primary">Search Date</button>
+                </div>
+
+                <div id="sho" class="short"></div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" type=text/javascript></script>
+    <script type=text/javascript>
+
+        $(document).ready(function () {
+
+            $('#submit').click(function () {
+
+                var cur = $('#cur').val();
+
+                if (cur != '') {
+
+                    $.ajax({
+
+                        url:
+
+                            "https://www.nbrb.by/API/ExRates/Rates?onDate=" + cur + "&Periodicity=0",
+
+                        type: 'GET',
+                        dataType: 'json',
+                        success: function (data) {
+                            let out = '';
+                            out += '<div class="jq">' + '<b>' + data[0]['Cur_Name'] + '</b><b>' + ' - ' + data[0]['Cur_OfficialRate'] + '</b><br>';
+                            out += '<b>' + data[1]['Cur_Name'] + '</b><b>' + ' - ' + data[1]['Cur_OfficialRate'] + '</b><br>';
+                            out += '<b>' + data[2]['Cur_Name'] + '</b><b>' + ' - ' + data[2]['Cur_OfficialRate'] + '</b><br>';
+                            out += '<b>' + data[3]['Cur_Name'] + '</b><b>' + ' - ' + data[3]['Cur_OfficialRate'] + '</b><br>';
+                            out += '<b>' + data[4]['Cur_Name'] + '</b><b>' + ' - ' + data[4]['Cur_OfficialRate'] + '</b><br>';
+                            out += '<b>' + data[5]['Cur_Name'] + '</b><b>' + ' - ' + data[5]['Cur_OfficialRate'] + '</b><br>';
+                            out += '<b>' + data[6]['Cur_Name'] + '</b><b>' + ' - ' + data[6]['Cur_OfficialRate'] + '</b><br>';
+                            out += '<b>' + data[7]['Cur_Name'] + '</b><b>' + ' - ' + data[7]['Cur_OfficialRate'] + '</b><br>';
+                            out += '<b>' + data[8]['Cur_Name'] + '</b><b>' + ' - ' + data[8]['Cur_OfficialRate'] + '</b><br>';
+                            out += '<b>' + data[9]['Cur_Name'] + '</b><b>' + ' - ' + data[9]['Cur_OfficialRate'] + '</b><br>';
+                            out += '<b>' + data[10]['Cur_Name'] + '</b><b>' + ' - ' + data[10]['Cur_OfficialRate'] + '</b><br>';
+                            out += '<b>' + data[11]['Cur_Name'] + '</b><b>' + ' - ' + data[11]['Cur_OfficialRate'] + '</b><br>';
+                            out += '<b>' + data[12]['Cur_Name'] + '</b><b>' + ' - ' + data[12]['Cur_OfficialRate'] + '</b><br>';
+                            out += '<b>' + data[13]['Cur_Name'] + '</b><b>' + ' - ' + data[13]['Cur_OfficialRate'] + '</b><br>';
+                            out += '<b>' + data[14]['Cur_Name'] + '</b><b>' + ' - ' + data[14]['Cur_OfficialRate'] + '</b><br>';
+                            out += '<b>' + data[15]['Cur_Name'] + '</b><b>' + ' - ' + data[15]['Cur_OfficialRate'] + '</b><br>';
+                            out += '<b>' + data[16]['Cur_Name'] + '</b><b>' + ' - ' + data[16]['Cur_OfficialRate'] + '</b><br>';
+                            out += '<b>' + data[17]['Cur_Name'] + '</b><b>' + ' - ' + data[17]['Cur_OfficialRate'] + '</b><br>';
+                            out += '<b>' + data[18]['Cur_Name'] + '</b><b>' + ' - ' + data[18]['Cur_OfficialRate'] + '</b><br>';
+                            out += '<b>' + data[19]['Cur_Name'] + '</b><b>' + ' - ' + data[19]['Cur_OfficialRate'] + '</b><br>';
+                            out += '<b>' + data[20]['Cur_Name'] + '</b><b>' + ' - ' + data[20]['Cur_OfficialRate'] + '</b><br>';
+                            out += '<b>' + data[21]['Cur_Name'] + '</b><b>' + ' - ' + data[21]['Cur_OfficialRate'] + '</b><br>';
+                            out += '<b>' + data[22]['Cur_Name'] + '</b><b>' + ' - ' + data[22]['Cur_OfficialRate'] + '</b><br>';
+                            out += '<b>' + data[23]['Cur_Name'] + '</b><b>' + ' - ' + data[23]['Cur_OfficialRate'] + '</b><br>';
+                            out += '<b>' + data[24]['Cur_Name'] + '</b><b>' + ' - ' + data[24]['Cur_OfficialRate'] + '</b><br>';
+                            out += '<b>' + data[25]['Cur_Name'] + '</b><b>' + ' - ' + data[25]['Cur_OfficialRate'] + '</b><br>' + '</div>';
+
+
+                            console.log(data);
+                            $('#sho').html(out);
+                        }
+
+                    });
+                } else {
+                    $('#error').html('Fiend cannot be empty');
+                }
+
+            });
+
+        });
+
+    </script>
+
+
+
+
+{% endblock content %}
+

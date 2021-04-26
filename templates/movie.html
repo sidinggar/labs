@@ -1,0 +1,23 @@
+{% extends 'index.html' %}
+{% set active_page = "movie" %}
+
+{% block content %}
+    <div class="photo-movie">
+        <h1><span>Новинки кино</span></h1>
+        <div class="films container">
+            <div class="row">
+
+                {% for i in afis %}
+
+                    <div class="box-movie"><a class="movie" href="{{ i.find('a', class_='media').get('href') }}">
+                        <img class="img-movie" src="{{ i.find('a', class_='media').find('img').get('src') }}"><br>
+                        <b class="link-movie"> {{ i.find('a', class_='name').text }}</b></a>
+                    </div>
+
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+

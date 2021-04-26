@@ -3,7 +3,15 @@ from parsing_currency import *
 from parsing_afisha2 import *
 from parsing_weather import *
 
+from paste import app
+
+from paste.controllers.helpers import render
+
 app = Flask(__name__)
+
+@app.route('/comments/')
+def root():
+    return render('index')
 
 
 @app.route('/')

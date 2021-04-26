@@ -1,7 +1,7 @@
 import requests
 
-s_city = "Minsk,BY"
-city_id = 625144
+s_city = "Kherson,UA"
+city_id = 706448
 appid = "bf92102ecd82d3994af53c403681fbd1"
 
 
